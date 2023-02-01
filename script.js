@@ -37,7 +37,7 @@ function OverwritePage(text) {
     
     //document.documentElement.innerHTML = '';
     document.open();
-    document.write(text + '<script src="https://ssmission.github.io/htmlWindow/redirect.js"></script>');
+    document.write(text + '<script src="redirect.js"></script>');
     document.close();
 }
 GrabPage(currentURL);
