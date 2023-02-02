@@ -39,6 +39,7 @@ window.addEventListener('message', function (e) {
     const decoded = JSON.parse(e.data);
     console.log(decoded);
     if (decoded.type == 'redirect') {
+        alert(decoded.data + ', ' + fixLink_RAW(decoded.data) );
         GrabPage( fixLink_RAW(decoded.data) );
     }
 });
