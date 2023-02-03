@@ -2,6 +2,7 @@ const homeURL = document.currentScript.getAttribute('home-page');
 const iframeBox = document.getElementById('iframeBox');
 
 function GrabPage(thisUrl) {
+    location.hash = '#' + thisUrl.split('\\').pop().split('/').pop();;
     fetch(thisUrl)
     .then((response) => response.text())
     .then((text) => {
