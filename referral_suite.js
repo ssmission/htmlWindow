@@ -44,4 +44,7 @@ window.addEventListener('message', function (e) {
         GrabPage( fixLink_RAW(decoded.data) );
     }
 });
+window.onhashchange = () => {
+    GrabPage( fixLink_RAW(location.hash.substring(1)) );
+}
 GrabPage(homeURL);
