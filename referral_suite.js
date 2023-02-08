@@ -9,6 +9,9 @@ function GrabPage(thisUrl) {
         setPage(text);
     });
 }
+function makeSafeLink(ref) {
+    return fixLink_RAW(ref);
+}
 function fixUrl(text, regex, linkType) {
     return text.replace(regex, function (match, capture) {
         console.log(capture, match);
