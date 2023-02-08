@@ -23,6 +23,9 @@ function fixUrl(text, regex, linkType) {
     });
 }
 function fixLink_RAW(capture) {
+    if ( capture.startsWith('sms:') || capture.startsWith('tel:') || capture.startsWith('mailto:') ) {
+        return capture;
+    }
     if (capture.includes('https://') || capture.includes('https://')) {
         return new URL(capture).href;
     } else {
