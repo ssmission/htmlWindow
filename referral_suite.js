@@ -10,9 +10,7 @@ window.fetch = async (...args) => {
         args[0] = homeURL + args[0];
     }
   }
-  const response = await origFetch(...args);
-  
-  return response;
+  return await origFetch(...args);
 };
 //end fetch functions
 
