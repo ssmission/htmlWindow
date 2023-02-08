@@ -10,6 +10,7 @@ window.fetch = async (...args) => {
         args[0] = homeURL + args[0];
     }
   }
+  console.log("fetching:", ...args);
   return await origFetch(...args);
 };
 //end fetch functions
