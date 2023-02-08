@@ -1,20 +1,6 @@
 const homeURL = document.currentScript.getAttribute('home-page');
 const iframeBox = document.getElementById('iframeBox');
 
-//handle fetch functions
-const {fetch: origFetch} = window;
-window.fetch = async (...args) => {
-  console.log("fetch called with args:", args);
-  if (!args[0].includes('https://')) {
-    if (!args[0].includes('http://')) {
-        args[0] = homeURL + args[0];
-    }
-  }
-  console.log("fetching:", ...args);
-  return await origFetch(...args);
-};
-//end fetch functions
-
 function GrabPage(thisUrl) {
     location.hash = '#' + thisUrl.split('\\').pop().split('/').pop();;
     fetch(thisUrl)
