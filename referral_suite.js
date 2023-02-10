@@ -41,6 +41,7 @@ function setPage(text) {
 
     iframeBox.innerHTML = '<iframe src=""></iframe>';
     iframeBox.lastChild.contentWindow.document.write(text);
+    iframeBox.lastChild.contentWindow.window.onload();
 }
 window.addEventListener('message', function (e) {
     const decoded = JSON.parse(e.data);
